@@ -1,7 +1,7 @@
 my:
   props:
     foo:
-      bar: BAR!!!
+      bar: POJO class property
       barlist:
         - bar1
         - bar2
@@ -9,7 +9,7 @@ my:
         key1: val1
         key2: val2
     foolist:
-      - bar: BAR1
+      - bar: List<POJO> property
         barlist:
           - bar3
           - bar4
@@ -21,4 +21,4 @@ my:
           - bar6
           - bar7
     innerfoo:
-      buzz: BUZZ
+      buzz: Inner POJO class property
