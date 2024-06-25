@@ -1,0 +1,24 @@
+my:
+  props:
+    foo:
+      bar: BAR!!!
+      barlist:
+        - bar1
+        - bar2
+      barmap:
+        key1: val1
+        key2: val2
+    foolist:
+      - bar: BAR1
+        barlist:
+          - bar3
+          - bar4
+          - bar5
+        barmap:
+          key3: val3
+      - bar: BAR2
+        barlist:
+          - bar6
+          - bar7
+    innerfoo:
+      buzz: BUZZ
