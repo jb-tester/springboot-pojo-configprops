@@ -1,14 +1,14 @@
 my:
   props:
     foo:
-      bar: POJO class property
-      barlist:
+      foo-prop1: POJO class property
+      foo-list-prop:
         - bar1
         - bar2
-      barmap:
+      foo-map-prop:
         key1: val1
         key2: val2
-    foolist:
+    bar-list:
       - bar: List<POJO> property
         barlist:
           - bar3

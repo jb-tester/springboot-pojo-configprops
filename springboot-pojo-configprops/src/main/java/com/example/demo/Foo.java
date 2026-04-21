@@ -9,31 +9,31 @@ import java.util.Map;
  * *
  */
 public class Foo {
-    String bar;
-    List<String> barlist;
-    Map<String, String> barmap;
+    String fooProp1;
+    List<String> fooListProp;
+    Map<String, String> fooMapProp;
 
-    public String getBar() {
-        return bar;
+    public String getFooProp1() {
+        return fooProp1;
     }
 
-    public void setBar(String bar) {
-        this.bar = bar;
+    public void setFooProp1(String fooProp1) {
+        this.fooProp1 = fooProp1;
     }
 
-    public List<String> getBarlist() {
-        return barlist;
+    public List<String> getFooListProp() {
+        return fooListProp;
     }
 
-    public void setBarlist(List<String> barlist) {
-        this.barlist = barlist;
+    public void setFooListProp(List<String> fooListProp) {
+        this.fooListProp = fooListProp;
     }
 
-    public Map<String, String> getBarmap() {
-        return barmap;
+    public Map<String, String> getFooMapProp() {
+        return fooMapProp;
     }
 
-    public void setBarmap(Map<String, String> barmap) {
-        this.barmap = barmap;
+    public void setFooMapProp(Map<String, String> fooMapProp) {
+        this.fooMapProp = fooMapProp;
     }
 }

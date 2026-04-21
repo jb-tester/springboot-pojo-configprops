@@ -16,8 +16,8 @@ public class DemoApplication {
     public CommandLineRunner commandLineRunner(MyProps myProps) {
         return args -> {
             System.out.println("--------------------------------------");
-            System.out.println(myProps.getFoo().getBar());
-            System.out.println(myProps.getFoolist().get(0).getBar());
+            System.out.println(myProps.getFoo().getFooProp1());
+            System.out.println(myProps.getBarList().get(0).getBar());
             System.out.println(myProps.getLibPojo1().getLibProp1());
             System.out.println(myProps.getInnerfoo().getBuzz());
             System.out.println(myProps.getNonStaticInnerFoo()); // will return null

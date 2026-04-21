@@ -11,16 +11,28 @@ import java.util.List;
 @Component
 @ConfigurationProperties("my.props")
 public class MyProps {
-
-  //  @NestedConfigurationProperty // annotation is required here
+     // Project class-type property.
+     // annotation is required here to make configurationProcessor/IDEA resolve the keys
+     @NestedConfigurationProperty
     Foo foo;
-    //  annotation is not required for collection of external pojos:
-    List<Foo> foolist;
-    //  annotation is not required for the inner class
+
+    // Collection<project class>-type property.
+    //  annotation is not required for collection of external pojos: IDEA shows properties of Foo as resolved in this case
+    // however, may be this is incorrect from the metadata point of view: configurationProcessor doesn't generate these properties
+    // in this case even the annotation doesn't help
+    List<Bar> barList;
+
+    // static inner class-type property.
+    //  annotation is not required for the inner class: both IDEA and configurationProcessor support the properties in this case
     InnerFoo innerfoo;
-    // annotation is not required, but the null value will be applied
+
+    // non-static inner class-type property
+    // annotation is not required, metadata is generated, but the null value is set for the class-type property
     NonStaticInnerFoo nonStaticInnerFoo;
-    //@NestedConfigurationProperty // annotation is required here
+
+    // Library class-type property
+    // annotation is required here to make configurationProcessor/IDEA resolve the keys
+    @NestedConfigurationProperty
     LibPojo1 libPojo1;
 
     public static class InnerFoo{
@@ -54,12 +66,12 @@ public class MyProps {
         this.foo = foo;
     }
 
-    public List<Foo> getFoolist() {
-        return foolist;
+    public List<Bar> getBarList() {
+        return barList;
     }
 
-    public void setFoolist(List<Foo> foolist) {
-        this.foolist = foolist;
+    public void setBarList(List<Bar> barList) {
+        this.barList = barList;
     }
 
     public InnerFoo getInnerfoo() {
