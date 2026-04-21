@@ -22,3 +22,5 @@ my:
           - bar7
     innerfoo:
       buzz: Inner POJO class property
+    non-static-inner-foo:
+      buzz: Non-static inner POJO property

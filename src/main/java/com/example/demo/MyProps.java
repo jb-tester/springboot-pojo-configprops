@@ -17,8 +17,33 @@ public class MyProps {
     List<Foo> foolist;
     //  annotation is not required for the inner class
     InnerFoo innerfoo;
+    // annotation is not required, but the null value will be applied
+    NonStaticInnerFoo nonStaticInnerFoo;
 
 
+    public static class InnerFoo{
+        String buzz;
+
+        public String getBuzz() {
+            return buzz;
+        }
+
+        public void setBuzz(String buzz) {
+            this.buzz = buzz;
+        }
+    }
+
+    public class NonStaticInnerFoo{
+        String buzz;
+
+        public String getBuzz() {
+            return buzz;
+        }
+
+        public void setBuzz(String buzz) {
+            this.buzz = buzz;
+        }
+    }
     public Foo getFoo() {
         return foo;
     }
@@ -43,15 +68,12 @@ public class MyProps {
         this.innerfoo = innerfoo;
     }
 
-    public static class InnerFoo{
-        String buzz;
-
-        public String getBuzz() {
-            return buzz;
-        }
-
-        public void setBuzz(String buzz) {
-            this.buzz = buzz;
-        }
+    public NonStaticInnerFoo getNonStaticInnerFoo() {
+        return nonStaticInnerFoo;
     }
+
+    public void setNonStaticInnerFoo(NonStaticInnerFoo nonStaticInnerFoo) {
+        this.nonStaticInnerFoo = nonStaticInnerFoo;
+    }
+
 }
