@@ -12,7 +12,7 @@ public class Bar {
     public String getBar() {
         return bar;
     }
-
+    // no gutters for properties:
     public void setBar(String bar) {
         this.bar = bar;
     }

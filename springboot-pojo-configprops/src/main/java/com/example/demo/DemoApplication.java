@@ -23,6 +23,7 @@ public class DemoApplication {
             System.out.println(myProps.getNonStaticInnerFoo()); // will return null
             // will fail:
             //System.out.println(myProps.getNonStaticInnerFoo().getBuzz());
+            System.out.println(myProps.getBuzz().getBoo().getBooProp());
             System.out.println("--------------------------------------");
         };
     }

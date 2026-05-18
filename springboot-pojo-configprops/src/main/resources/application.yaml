@@ -26,3 +26,7 @@ my:
       buzz: Non-static inner POJO property
     lib-pojo1:
       lib-prop1: library class property1 value
+    buzz:
+      buzz-prop: buzz-prop-value
+      boo:
+        boo-prop: buzz-boo-prop-value

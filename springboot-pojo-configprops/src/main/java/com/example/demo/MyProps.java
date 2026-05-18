@@ -16,6 +16,10 @@ public class MyProps {
      @NestedConfigurationProperty
     Foo foo;
 
+     // project class-type property that also has the nested external class-type property
+     @NestedConfigurationProperty
+     Buzz buzz;
+
     // Collection<project class>-type property.
     //  annotation is not required for collection of external pojos: IDEA shows properties of Foo as resolved in this case
     // however, may be this is incorrect from the metadata point of view: configurationProcessor doesn't generate these properties
@@ -96,5 +100,13 @@ public class MyProps {
 
     public void setLibPojo1(LibPojo1 libPojo1) {
         this.libPojo1 = libPojo1;
+    }
+
+    public Buzz getBuzz() {
+        return buzz;
+    }
+
+    public void setBuzz(Buzz buzz) {
+        this.buzz = buzz;
     }
 }
