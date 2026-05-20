@@ -20,10 +20,17 @@ my:
         barlist:
           - bar6
           - bar7
+    dummy-map:
+      key1:
+        dummy-prop1: key1-dummy-prop1-value
+        dummy-prop2: key1-dummy-prop2-value
     innerfoo:
       buzz: Inner POJO class property
     non-static-inner-foo:
       buzz: Non-static inner POJO property
+    inner-bar-list:
+      - bar-prop: bar-prop-1
+      - bar-prop: bar-prop-2
     lib-pojo1:
       lib-prop1: library class property1 value
     buzz:

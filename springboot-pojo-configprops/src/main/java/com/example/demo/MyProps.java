@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 
 @Component
@@ -21,10 +22,25 @@ public class MyProps {
      Buzz buzz;
 
     // Collection<project class>-type property.
-    //  annotation is not required for collection of external pojos: IDEA shows properties of Foo as resolved in this case
-    // however, may be this is incorrect from the metadata point of view: configurationProcessor doesn't generate these properties
-    // in this case even the annotation doesn't help
+    //  annotation is not required for collection of external pojos: IDEA shows properties of Bar as resolved
+    // metadata: configurationProcessor doesn't generate Bar class properties
+
+    // note the gutter icons absence in the Bar class
     List<Bar> barList;
+
+    // Map<project class>-type property.
+    //  annotation is not required for map of external pojos: IDEA shows properties of Dummy as resolved
+    // metadata: configurationProcessor doesn't generate the Dummy class properties
+
+    // note the gutter icons absence in the Dummy class
+    Map<String, Dummy> dummyMap;
+
+    // Collection<inner class>-type property.
+    //  annotation is not required for collection of inner pojos: IDEA shows properties of InnerBar as resolved
+    // metadata: configurationProcessor doesn't generate InnerBar class properties
+
+    // note the gutter icons absence in the InnerBar class
+    List<InnerBar> innerBarList;
 
     // static inner class-type property.
     //  annotation is not required for the inner class: both IDEA and configurationProcessor support the properties in this case
@@ -45,12 +61,23 @@ public class MyProps {
         public String getBuzz() {
             return buzz;
         }
-
+        // gutter is shown:
         public void setBuzz(String buzz) {
             this.buzz = buzz;
         }
     }
 
+    public static class InnerBar{
+        String barProp;
+
+        public String getBarProp() {
+            return barProp;
+        }
+        // no gutter:
+        public void setBarProp(String barProp) {
+            this.barProp = barProp;
+        }
+    }
     public class NonStaticInnerFoo{
         String buzz;
 
@@ -108,5 +135,21 @@ public class MyProps {
 
     public void setBuzz(Buzz buzz) {
         this.buzz = buzz;
+    }
+
+    public Map<String, Dummy> getDummyMap() {
+        return dummyMap;
+    }
+
+    public void setDummyMap(Map<String, Dummy> dummyMap) {
+        this.dummyMap = dummyMap;
+    }
+
+    public List<InnerBar> getInnerBarList() {
+        return innerBarList;
+    }
+
+    public void setInnerBarList(List<InnerBar> innerBarList) {
+        this.innerBarList = innerBarList;
     }
 }
